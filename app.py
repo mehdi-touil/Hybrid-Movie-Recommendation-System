@@ -60,7 +60,7 @@ cos_sim = cosine_similarity(tfidf_matrix)
 # Create a sidebar for navigation
 sidebar_options = ["Content Based", "Collaborative Filtering", "Hybrid Recommender"]
 selected_sidebar_option = st.sidebar.radio("Select a view", sidebar_options)
-
+st.header('By Mehdi Touil ML enthusiast')
 if selected_sidebar_option == "Content Based":
     st.header('Content Based Movie Recommender System')
 
