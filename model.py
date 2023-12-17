@@ -5,8 +5,8 @@ from math import sqrt
 
 def calculate_recommendations(user_ratings):
     # Load data
-    movie = pd.read_csv('dataset/movies.csv')
-    rating = pd.read_csv('dataset/ratings.csv')
+    movie = pd.read_csv('data/movies.csv')
+    rating = pd.read_csv('data/ratings.csv')
 
     # Add user ratings to input dataframe
     input_movie = pd.DataFrame(user_ratings.items(), columns=['title', 'rating'])
