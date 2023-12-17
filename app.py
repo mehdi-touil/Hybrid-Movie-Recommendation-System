@@ -49,13 +49,12 @@ def predict(title, similarity_weight=0.7, top_n=10):
     return recommended_movie_names, recommended_movie_posters
 # Load movies and similarity data
 
-# movies = pickle.load(open('movie_list.pkl', 'rb'))
-movies = pd.read_pickle('movie_list.pkl')
-similarity = pd.read_pickle('similarity.pkl')
+movies = pickle.load(open('movie_list.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
+
 # Hybrid Approach
 hybrid_df = pd.read_csv('data/hybrid_df.csv')
-tfidf_matrix = pd.read_pickle('cosine_similarity.pkl')
-# tfidf_matrix = pickle.load(open('cosine_similarity.pkl', 'rb'))
+tfidf_matrix = pickle.load(open('cosine_similarity.pkl', 'rb'))
 cos_sim = cosine_similarity(tfidf_matrix)
 
 # Create a sidebar for navigation
