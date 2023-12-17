@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from model import calculate_recommendations
-movie = pd.read_csv('dataset/movies.csv')
+movie = pd.read_csv('data/movies.csv')
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(movie_id)
@@ -52,7 +52,7 @@ movies = pickle.load(open('movie_list.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 # Hybrid Approach
-hybrid_df = pd.read_csv('dataset/hybrid_df.csv')
+hybrid_df = pd.read_csv('data/hybrid_df.csv')
 tfidf_matrix = pickle.load(open('cosine_similarity.pkl', 'rb'))
 cos_sim = cosine_similarity(tfidf_matrix)
 
